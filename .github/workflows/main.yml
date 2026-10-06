@@ -27,7 +27,7 @@ jobs:
         run: dotnet restore MobileI2VConsole.sln
 
       - name: Build APK
-        run: dotnet publish src/MobileI2VConsole/MobileI2VConsole.csproj -f net10.0-android -c Release -p:AndroidPackageFormat=apk -o ./artifacts
+        run: dotnet publish src/MobileI2VConsole/MobileI2VConsole.csproj -f net10.0-android -c Release -p:AndroidPackageFormat=apk -o ./artifacts-p:PublishTrimmed=false-p:RunAOTCompilation=false
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
